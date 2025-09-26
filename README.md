@@ -24,6 +24,11 @@ A simple utility script that counts the number of words in any text file.
 - Splits the text into words.  
 - Outputs the total word count.  
 
-**Usage Example:**  
-```bash
-python word_counter.py
+**Quick Example (from the code):**  
+```python
+def count_words(file_path):
+    with open(file_path, 'r') as file:
+        text = file.read()
+        words = text.split()
+        return len(words)
+
