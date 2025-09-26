@@ -28,10 +28,3 @@ A simple utility script that counts the number of words in any text file.
 python word_counter.py
 
 ---
-
-🔑 Why this works:  
-- Shows clarity: anyone looking knows exactly what the script does.  
-- Adds professional polish: your repo isn’t just “code” — it’s documented.  
-- Recruiters/devs love repos with **readable explanations**.  
-
-👉 Do you want me to rewrite your whole README to integrate this cleanly (so it flows naturally with the “Maverick Experiments 🚀” intro you already have), or do you want to paste this in as a separate section for now?
