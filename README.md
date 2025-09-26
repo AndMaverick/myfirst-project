@@ -1,2 +1,15 @@
 # myfirst-project
+# Maverick Experiments 🚀
 
+This repository is a sandbox for building and shipping ideas.  
+I use it to test concepts, write small utilities, and capture what I’m learning along the way.  
+
+## What You’ll Find Here
+- Simple tools and scripts that solve everyday problems ⚡  
+- Notes and experiments as I explore new technologies 🔍  
+- Foundations for larger projects I’ll grow over time 🌱  
+
+## Current Focus
+Building a consistent workflow on GitHub and laying the groundwork for future projects.  
+
+Stay tuned — new drops coming soon.
