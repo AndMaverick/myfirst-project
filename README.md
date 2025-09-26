@@ -13,6 +13,7 @@ I use it to test concepts, write small utilities, and capture what I’m learnin
 Building a consistent workflow on GitHub and laying the groundwork for future projects.  
 
 Stay tuned — new drops coming soon.
+
 ## 🚀 Scripts
 
 ### `word_counter.py`
@@ -26,5 +27,3 @@ A simple utility script that counts the number of words in any text file.
 **Usage Example:**  
 ```bash
 python word_counter.py
-
----
