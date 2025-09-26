@@ -32,3 +32,5 @@ def count_words(file_path):
         words = text.split()
         return len(words)
 
+
+
