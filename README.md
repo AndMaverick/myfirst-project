@@ -1,6 +1,6 @@
 # buoc.dau
 
-**Bước đầu** (*first step*). Count Vietnamese, Chinese, Japanese and Korean text correctly. Dependency-free Python 3.10+.
+**Bước đầu** (*first step*). Count Vietnamese, Chinese, Japanese and Korean text correctly. Dependency free Python 3.10+.
 
 **Bước đầu.** Đếm đúng văn bản tiếng Việt, tiếng Trung, tiếng Nhật và tiếng Hàn. Chỉ dùng thư viện chuẩn của Python.
 
@@ -54,7 +54,7 @@ c.syllables, c.words      # (7, 4)
 | Vietnamese | syllables (always); words (with a lexicon) | a space separates syllables, not words: "sinh viên" is one word |
 | Chinese (Han) | characters | no spaces between words |
 | Japanese | Han characters and kana, separately | no spaces; kana and kanji are different questions |
-| Korean | Hangul syllables, and eojeol (space-separated units) | Korean does use spaces, but around phrases, not single syllables |
+| Korean | Hangul syllables, and eojeol (separated by spaces units) | Korean does use spaces, but around phrases, not single syllables |
 | Thai | characters | no spaces between words, and no word segmenter here |
 
 - **NFC first.** `ệ` can be one code point or `e` plus two combining marks. Text is normalised before counting, so both give the same answer.
@@ -79,13 +79,13 @@ The 6 gold sentences were segmented by hand.
 
 ## Honest limits / Giới hạn
 
-- **Maximum matching is a baseline, not a state-of-the-art segmenter.** It cannot resolve ambiguity from context. The last line above is a
+- **Maximum matching is a baseline, not a state of the art segmenter.** It cannot resolve ambiguity from context. The last line above is a
   ceiling (the lexicon was built from the answers), not an accuracy figure. With the 18-word sample list the count is off by +6 on 30 words,
   because unknown compounds stay split. Bring a real lexicon for real work.
-- **The Vietnamese flag is a text-level heuristic.** Text is treated as Vietnamese when at least 1 token in 10 carries a Vietnamese-specific
+- **The Vietnamese flag is a text level heuristic.** Text is treated as Vietnamese when at least 1 token in 10 carries a specific to Vietnamese
   letter or tone mark (and at least 2 tokens do). English sentences inside a Vietnamese file are therefore counted as syllables too.
   Vietnamese typed without diacritics is not detected.
-- **Characters are code points after NFC**, not user-perceived characters. Emoji sequences and Indic or Thai combining marks count each part.
+- **Characters are code points after NFC**, not perceived by the user characters. Emoji sequences and Indic or Thai combining marks count each part.
 - **Thai is counted, not segmented.**
 - **Hangul words are eojeol**, which are not dictionary words.
 - The 6-sentence gold set is small. It shows the effect, it is not a benchmark.
