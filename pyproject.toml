@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "buoc.dau"
+version = "0.2.0"
+description = "Bước đầu. Count Vietnamese, Chinese, Japanese and Korean text correctly: NFC-normalised, syllables vs words, per-script counts. Dependency-free Python."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "AndMaverick LLC" }]
+
+[project.scripts]
+buoc-dau = "buoc_dau.cli:main"
+
+[tool.setuptools.package-data]
+buoc_dau = ["py.typed"]
+
+[tool.setuptools.packages.find]
+include = ["buoc_dau*"]
+
+[tool.ruff]
+line-length = 130
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "C4", "SIM"]
+ignore = ["E501"]
+
+[tool.mypy]
+strict = true
+files = ["buoc_dau"]

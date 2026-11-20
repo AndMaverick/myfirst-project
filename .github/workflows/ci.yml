@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Unit tests
+        run: python -m unittest discover -s tests -t . -v
+      - name: Command line smoke test
+        run: python -m buoc_dau examples/mixed.txt --lexicon examples/vi_words.txt --top 3
+      - name: Unreadable file must exit 2
+        run: |
+          set +e
+          python -m buoc_dau does-not-exist.txt 2> /dev/null
+          test "$?" -eq 2
+      - name: Original script still works
+        run: python -c "import word_counter; print(word_counter.count_words('examples/mixed.txt'))"
+      - name: Verification figures
+        run: python examples/evaluate.py
+
+  quality:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install ruff mypy
+      - run: ruff check .
+      - run: mypy

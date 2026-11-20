@@ -1,0 +1,19 @@
+# A small Vietnamese word list for the examples. Replace it with a real lexicon for real work.
+sinh viên
+việt nam
+lập trình
+chăm chỉ
+máy tính
+học sinh
+trường học
+thành phố
+hồ chí minh
+đại học
+công nghệ
+phần mềm
+kỹ sư
+xin chào
+cảm ơn
+bạn bè
+gia đình
+mùa xuân
